@@ -26,6 +26,7 @@ var help = [
     '   -e, --extract           Extract inlined styles from referenced stylesheets',
     '   -p, --pathPrefix        Path to prepend CSS assets with (defaults to /) ',
     '   -f, --folder            HTML Subfolder (default: \'\')',
+    '   -r, --remote            Remote URL as base for relative referenced stylesheets',
     '   --ii, --inlineImages    Inline images',
     '   --ignore                RegExp, @type or selector to ignore',
     '   --include               RegExp, @type or selector to include',
@@ -56,6 +57,7 @@ var cli = meow({
         m: 'minify',
         e: 'extract',
         p: 'pathPrefix',
+        r: 'remote',
         ii: 'inlineImages'
     }
 });
@@ -67,6 +69,9 @@ cli.flags = _.reduce(cli.flags, function (res, val, key) {
     }
 
     switch (key) {
+        case 'remote':
+            res.remote = val;
+            break;
         case 'htmltarget':
             res.htmlTarget = val;
             break;
