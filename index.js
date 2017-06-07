@@ -77,6 +77,7 @@ exports.generate = function (opts, cb) {
             css: corePromise
         }).then(function (result) {
             return sourceInliner(result.file.contents.toString(), result.css, {
+                defer: opts.defer || false,
                 minify: opts.minify || false,
                 extract: opts.extract || false,
                 basePath: opts.base || process.cwd()

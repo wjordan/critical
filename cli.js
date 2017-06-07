@@ -26,6 +26,7 @@ var help = [
     '   -e, --extract           Extract inlined styles from referenced stylesheets',
     '   -p, --pathPrefix        Path to prepend CSS assets with (defaults to /) ',
     '   -f, --folder            HTML Subfolder (default: \'\')',
+    '   -d, --defer             Defer loading styles until DOMContentLoaded event',
     '   --ii, --inlineImages    Inline images',
     '   --ignore                RegExp, @type or selector to ignore',
     '   --include               RegExp, @type or selector to include',
@@ -56,6 +57,7 @@ var cli = meow({
         m: 'minify',
         e: 'extract',
         p: 'pathPrefix',
+        d: 'defer',
         ii: 'inlineImages'
     }
 });
@@ -67,6 +69,9 @@ cli.flags = _.reduce(cli.flags, function (res, val, key) {
     }
 
     switch (key) {
+        case 'defer':
+            res.defer = val;
+            break;
         case 'htmltarget':
             res.htmlTarget = val;
             break;
