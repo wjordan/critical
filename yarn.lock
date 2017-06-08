@@ -1470,7 +1470,7 @@ ini@~1.3.0:
 
 inline-critical@wjordan/inline-critical#defer-idle:
   version "2.4.1"
-  resolved "https://codeload.github.com/wjordan/inline-critical/tar.gz/2204a3f563b30d572f4bbf7ddf1ab66c76ebda29"
+  resolved "https://codeload.github.com/wjordan/inline-critical/tar.gz/7c909827ac4ee728b14b81e213a9a47a6c73de23"
   dependencies:
     cave "2.0.0"
     cheerio "0.22.0"
